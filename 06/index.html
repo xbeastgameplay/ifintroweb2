@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    <head>
+        <title>Javascript</title>
+        <script type="text/Javascript">
+
+            function mostrarRaiz(numero) {
+                 const raizQuadrada = Math.sqrt(numero);
+
+             alert(`A raiz quadrada de ${numero} é ${raizQuadrada}`);
+            
+                 const resultadoElement = document.getElementById('resultado');
+            }
+        
+
+            function escreveDiv(texto){
+                document.getElementById("minhaDiv").innerHTML = texto;
+            }
+
+            function escreveDiv2() {
+                texto = prompt('Digite um texto qualquer');
+                document.getElementById("minhaDiv2").innerHTML = texto;
+            }
+        
+        </script>
+
+    </head>
+
+    <body>
+
+        <h1>Raiz Quadrada</h1>
+
+        <button onclick="mostrarRaiz(25)">Raiz quadrada de 25</button>
+        <button onclick="mostrarRaiz(36)">Raiz quadrada de 36</button>
+        <button onclick="mostrarRaiz(49)">Raiz quadrada de 49</button>
+    
+        <p id="resultado"></p>
+
+        <hr>
+
+        <h1>Escrevendo na Div</h1>
+
+        <button onclick="escreveDiv('<h1> Programação Web</h1>')">Escrever</button> <br><br>
+
+        <div id=""minhaDiv></div>
+
+        <hr>
+
+        <h1>Escrevendo na Texto Dinâmico</h1>
+
+        <button onclick="escreveDiv2()">Escrever</button> <br><br>
+        
+        <div id="minhaDiv2"></div>
+    </body>
+</html>
