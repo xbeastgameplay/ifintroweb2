@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        button {
+            margin: 10px;
+            padding: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Simulação de Lista de Pessoas</h1>
+    
+    <button onclick="adicionarPessoa()">Adicionar Pessoa</button>
+    <button onclick="removerPessoa()">Remover Última Pessoa</button>
+
+    <p id="listaPessoas">Lista de Pessoas: Nenhuma pessoa na pilha</p>
+
+    <script>
+        let pilhaPessoas = [];
+
+        function adicionarPessoa() {
+            let nome = prompt("Digite o nome da pessoa:");
+            
+            if (nome) {
+                pilhaPessoas.push(nome);
+                atualizarLista();
+            }
+        }
+
+        function removerPessoa() {
+            if (pilhaPessoas.length > 0) {
+                let pessoaRemovida = pilhaPessoas.pop();
+                alert("Pessoa removida: " + pessoaRemovida);
+                atualizarLista();
+            } else {
+                alert("Não há pessoas na pilha para remover.");
+            }
+        }
+
+        function atualizarLista() {
+            let listaElement = document.getElementById("listaPessoas");
+
+            if (pilhaPessoas.length > 0) {
+                listaElement.textContent = "Lista de Pessoas: " + pilhaPessoas.join(", ");
+            } else {
+                listaElement.textContent = "Lista de Pessoas: Nenhuma pessoa na pilha";
+            }
+        }
+    </script>
+</body>
+</html>
